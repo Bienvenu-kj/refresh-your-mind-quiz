@@ -1,0 +1,49 @@
+<style>
+  @keyframes progress {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+  .progressAnim {
+    animation-name: progress;
+    animation-duration: 20s;
+    animation-timing-function: ease-out;
+  }
+</style>
+<div
+  class="container py-16 h-full relative max-w-screen-sm m-auto flex flex-col items-center justify-between"
+>
+  <app-header />
+  <main>
+    <h2 class="text-[1.1rem] font-[800] tracking-wide text-[#052834] text-center">Informatic Quiz</h2>
+  </main>
+  <footer class="">
+    <section id="author" class="">
+      <p class="font-medium text-center text-xs text-[#052834]">Made by</p>
+      <p class="font-extrabold text-sm text-[#052834] text-center">
+        Bienvenu Kajirifo Luc
+      </p>
+    </section>
+    <section id="progess_bar_container" class="mt-12 flex gap-x-1 items-center">
+      <div
+        id="progress_bar_container"
+        class="border-2 border-[#ffd166] h-2 w-48 rounded-xl"
+      >
+        <div
+          id="progress_bar_content"
+          class="bg-[#073b4c] h-full rounded-xl w-0"
+          [style]="w_progress"
+        ></div>
+      </div>
+      <div
+        id="progress_counter"
+        class="text-[0.55rem] text-center text-white font-bold"
+      >
+        {{ progress_counter }} %
+      </div>
+    </section>
+  </footer>
+</div>
