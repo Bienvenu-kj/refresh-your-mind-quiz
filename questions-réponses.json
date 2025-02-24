@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "question": "Quel langage est utilisé pour structurer une page web ?",
+    "choices": ["HTML", "CSS", "JavaScript", "PHP"],
+    "answer": "HTML"
+  },
+  {
+    "id": 2,
+    "question": "Quel langage permet de styliser une page web ?",
+    "choices": ["HTML", "CSS", "JavaScript", "Python"],
+    "answer": "CSS"
+  },
+  {
+    "id": 3,
+    "question": "Quel élément HTML est utilisé pour créer un lien hypertexte ?",
+    "choices": ["<a>", "<link>", "<href>", "<button>"],
+    "answer": "<a>"
+  },
+  {
+    "id": 4,
+    "question": "Quelle méthode JavaScript permet d'ajouter un élément au DOM ?",
+    "choices": ["appendChild()", "addElement()", "createNode()", "insertItem()"],
+    "answer": "appendChild()"
+  },
+  {
+    "id": 5,
+    "question": "Quelle propriété CSS permet de changer la couleur du texte ?",
+    "choices": ["color", "text-color", "font-color", "background-color"],
+    "answer": "color"
+  },
+  {
+    "id": 6,
+    "question": "Quelle est la signification de CSS ?",
+    "choices": [
+      "Computer Style Sheets",
+      "Creative Style System",
+      "Cascading Style Sheets",
+      "Code Styling Source"
+    ],
+    "answer": "Cascading Style Sheets"
+  },
+  {
+    "id": 7,
+    "question": "Comment sélectionner un élément par son ID en CSS ?",
+    "choices": ["#", ".", "*", "@id"],
+    "answer": "#"
+  },
+  {
+    "id": 8,
+    "question": "Quel est le rôle de JavaScript sur une page web ?",
+    "choices": [
+      "Gérer la mise en page",
+      "Ajouter de l'interactivité",
+      "Créer des bases de données",
+      "Faire du design"
+    ],
+    "answer": "Ajouter de l'interactivité"
+  },
+  {
+    "id": 9,
+    "question": "Quelle extension de fichier est utilisée pour une feuille de style CSS ?",
+    "choices": [".html", ".css", ".js", ".php"],
+    "answer": ".css"
+  },
+  {
+    "id": 10,
+    "question": "Quelle propriété CSS permet de rendre un élément flexible ?",
+    "choices": ["grid", "block", "flex", "relative"],
+    "answer": "flex"
+  }
+]
