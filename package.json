@@ -20,6 +20,7 @@
     "@angular/router": "^19.1.0",
     "@tailwindcss/postcss": "^4.0.6",
     "canvas-confetti": "^1.9.3",
+    "glob": "^11.0.1",
     "material-design-icons": "^3.0.1",
     "postcss": "^8.5.2",
     "rxjs": "~7.8.0",

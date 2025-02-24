@@ -1,59 +1,79 @@
-# NgRefreshYourMindQuizApp
+# Refresh Your Mind - Quiz Informatique
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.7.
+"Refresh Your Mind" est un quiz informatique interactif pour tester et améliorer vos connaissances en informatique. L'application propose pour le moment dix questions touchant sur les bases du developpement web meme si la vision est qu'elle couvre plutard de questions dans divers domaines de l'informatique, avec un système de score et de vies. C'est un outil amusant et éducatif pour stimuler votre esprit !
 
-## Development server
+## Fonctionnalités :
 
-To start a local development server, run:
+- **Page de démarrage avec un chargement progressif**
+- **Page d'accueil**
+- **Interface de quiz avec score et vies**
+- **Page de résulats avec un resumé personnalisé**
+- **Détails des résultats avec des questins reussies et échouéees**
 
-```bash
-ng serve
-```
+## Installation et Utilisation
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+1. **Prérequis** :
 
-## Code scaffolding
+   - Node.js et npm installés sur votre machine
+   - Angular CLI
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+2. **Installation** :
 
-```bash
-ng generate component component-name
-```
+   2.1. Clonez le dépôt :
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+   ```bash
+   git clone https://github.com/Bienvenu-kj/refresh-your-mind-quiz.git
+   ```
 
-```bash
-ng generate --help
-```
+   2.2. Accedez au dossier du projet :
 
-## Building
+   ```bash
+   cd refresh-your-mind-app
+   ```
 
-To build the project run:
+   2.3.installez les dépendances nécessaires :
 
-```bash
-ng build
-```
+   ```bash
+   npm install
+   ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+3. **Démarrage** :
 
-## Running unit tests
+   Lancez le projet en mode développement :
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+   ```bash
+   ng serve
+   ```
 
-```bash
-ng test
-```
+   Ouvrez `https://localhost:4200` dans votre navigateur pour voir l'application.
 
-## Running end-to-end tests
+## Version en ligne
 
-For end-to-end (e2e) testing, run:
+Accedez à l'application déployée à cette adresse :
+`https://Bienvenu-kj.github.io/refresh-your-mind-quiz`
 
-```bash
-ng e2e
-```
+## Contribution
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+Toute contribution pour améliorer le projet est la bienvenue.
 
-## Additional Resources
+**Voici comment contribuer** :
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+    1. Fork le projet
+    2. Crée une nouvelle branche (`git checkout -b feature/nom-de-la-fonctionnalité`)
+    3. Committes tes changements (`git commit -m 'Ajout d'une fonction'`)
+    4. Pusn la branch (`git push origin feature/nom-de-la-fonctionnalité`)
+    5. Ouvre une Pull Request
+
+## Licence
+
+Ce projet est sous licence MIT - voir le fichier [LICENCE](LICENCE) pour plus de détails.
+
+## Technologies et Bibliothèques utilisées :
+
+- **Angular** : Framework pour le développement d'application web
+- **Tailwind CSS** : Framework CSS utilitaire pour une personnalisation rapide des styles
+- **npm** : Gestionnaire de paquets pour gérer les dépendances
+
+## Ressources utilisées :
+
+- **Icônes** : [Heroicons](https://heroicons.com) - Utiliisé pour les icônes jusqu'a maintenant

@@ -25,18 +25,18 @@ var HomeComponent = /** @class */ (function () {
         this.MsM.SetMusicGameOnOff();
     };
     HomeComponent.prototype.ngOnInit = function () {
-        var _this = this;
-        fetch('https://fonts.googleapis.com/icon?family=Material+Icons')
-            .then(function (response) {
-            if (response.ok) {
-                _this.material_icon = true;
-                console.log('Tout va bien, les icons sont prets', response);
-            }
-            throw new Error("Erreur lors de la requette " + response.status);
-        })["catch"](function (error) {
-            console.log(error);
-            _this.material_icon = false;
-        });
+        // fetch('https://fonts.googleapis.com/icon?family=Material+Icons')
+        //   .then((response) => {
+        //     if (response.ok) {
+        //       this.material_icon = true;
+        //       console.log('Tout va bien, les icons sont prets', response);
+        //     }
+        //     throw new Error(`Erreur lors de la requette ${response.status}`);
+        //   })
+        //   .catch((error) => {
+        //     console.log(error);
+        //     this.material_icon = false;
+        //   });
     };
     HomeComponent = __decorate([
         core_1.Component({

@@ -30,17 +30,17 @@ export default class HomeComponent implements OnInit {
     this.MsM.SetMusicGameOnOff();
   }
   ngOnInit() {
-    fetch('https://fonts.googleapis.com/icon?family=Material+Icons')
-      .then((response) => {
-        if (response.ok) {
-          this.material_icon = true;
-          console.log('Tout va bien, les icons sont prets', response);
-        }
-        throw new Error(`Erreur lors de la requette ${response.status}`);
-      })
-      .catch((error) => {
-        console.log(error);
-        this.material_icon = false;
-      });
+    // fetch('https://fonts.googleapis.com/icon?family=Material+Icons')
+    //   .then((response) => {
+    //     if (response.ok) {
+    //       this.material_icon = true;
+    //       console.log('Tout va bien, les icons sont prets', response);
+    //     }
+    //     throw new Error(`Erreur lors de la requette ${response.status}`);
+    //   })
+    //   .catch((error) => {
+    //     console.log(error);
+    //     this.material_icon = false;
+    //   });
   }
 }
