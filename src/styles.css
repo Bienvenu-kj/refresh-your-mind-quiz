@@ -1,1 +1,65 @@
 @import "tailwindcss";
+
+.family_princ_element {
+  font-family: rajdhani, sans-serif;
+}
+.princip_background {
+  background: linear-gradient(
+    45deg,
+    #b49b36 0%,
+    #0b607b 0%,
+    #073b4c 0%,
+    #c3a334 0%,
+    #536541 0%,
+    #526541 38.76%,
+    #4d6241 52.6%,
+    #073b4b 100%
+  );
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+body {
+  /*background: linear-gradient(45deg, #073b4c, #ffc52d, #073b4c);
+      background: linear-gradient(45deg, #ffc52d, #073b4c 75.84%);
+      background: linear-gradient(135deg, #073b4b, #1c768f);
+
+      background: linear-gradient(135deg, #073b4b, #00a5b5);
+      background: linear-gradient(135deg, #073b4b, #021c27);
+      background: linear-gradient(135deg, #073b4b, #6a0dad);
+      background: linear-gradient(45deg, #073b4b 17.98%, #073b4c 82.02%);
+      background: linear-gradient(135deg, #073b4b 17.98%, #07254a 82.02%);
+      background: linear-gradient(135deg, #073b4b, #07254a);
+      background: linear-gradient(45deg, #073b4b, #0F84A7);
+      background: linear-gradient(45deg, #b49b36 0%, #0b607b 0%, #073b4c 0%, #c3a334 0%, #073b4b 100%);*/
+  background: linear-gradient(
+    45deg,
+    #b49b36 0%,
+    #0b607b 0%,
+    #073b4c 0%,
+    #c3a334 0%,
+    #536541 0%,
+    #526541 38.76%,
+    #4d6241 52.6%,
+    #073b4b 100%
+  );
+  background-size: cover;
+  height: 100dvh;
+  width: 100%;
+  background-repeat: no-repeat;
+  align-content: center;
+  justify-items: center;
+  font-family: Inter, sans-serif;
+  overflow-y: auto;
+}
+h1,
+h2,
+h3 {
+  font-family: rajdhani, sans-serif;
+  font-weight: 700;
+}
+
+@media (orientation: landscape) and (max-width<730px) {
+  body {
+    height: 100vw;
+  }
+}

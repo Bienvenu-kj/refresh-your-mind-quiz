@@ -1,69 +1,47 @@
 <style>
-  .full-container {
-    border: 1px solid #808080;
-    background: linear-gradient(45deg, #ffc52d 1.12%, #073b4c 82.02%);
-    background-blend-mode: normal;
-
+  .index {
+    z-index: -1;
   }
-
 </style>
+<div class="relative w-full h-full">
+  <div class="index blur-[8px] w-full h-full absolute top-0 left-0 princip_background">
+    <div class="princip_background w-full h-full">
 
-<div class="full-container w-full h-full">
-  <div class="container py-14 px-4 h-full relative max-w-screen-sm m-auto">
-    <main class="h-full w-full rounded-[44px] p-4 border border-[#808080]">
-      <header class="flex flex-col gap-y-6 rounded-[28px] mb-5 relative">
-        <div routerLink="/quiz-final-result"
-          class="rounded-[50%] absolute transition hover:shadow-[#ffc52d] hover:shadow flex items-center justify-center text-white">
+    </div>
+  </div>
+  <div class="container text-100 z-index-10 max-w-screen-sm py-5 max-[640px]:px-5 px-6 m-auto h-full">
+    <div
+      class="text-center h-full w-full border-[5px] bg-[rgba(0,0,0,70%)] border-yellow-200 rounded-[2.5rem] py-5 flex flex-col gap-y-13">
+      <header class="relative flex justify-center items-center">
+        <div role="button" aria-label="button retour au resultat" routerLink="/quiz-final-result" class="navigation_button rounded-[50px] py-1 absolute transition left-[4%]  hover:bg-[rgba(0,0,0,50%)] flex items-center
+          justify-center ">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-            stroke="currentColor" aria-hidden="true" data-slot="icon"
-            class="border border-[#ffc52d] h-10 w-12 bg-[rgba(0,0,0,0.64)] p-1 rounded-[50%]">
+            stroke="currentColor" aria-hidden="true" data-slot="icon" class="navigation_button h-7 w-9 text-yellow-200">
             <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
           </svg>
         </div>
-        <div class="">
-          <h1 class="text-2xl text-center font-bold text-[#FFC52D] flex flex-col items-center gap-y-2">Détails du quiz
-          </h1>
-        </div>
-        <div class="mb-8">
-          <h2 style="text-shadow: 0 0 15px #FFC52D;" class="text-xl text-center font-bold text-[#FFC52D]">
-            {{questions_doneSucced.length}}/{{questions_done.length}} </h2>
-        </div>
+        <h1 class="text-2xl text-yellow-200 font-[800] tracking-wider">
+          Détails du quiz
+        </h1>
       </header>
+      <main class="h-[80%] flex flex-col gap-y-3 items-center px-2">
+        <header>
+          <h2 style="text-shadow:0 0 8px rgba(0,0,0,67%);" class="text-gray-200 tracking-wide font-bold text-xl">
+            {{questions_doneSucced.length}}/{{questions_done.length}}</h2>
+        </header>
+        <main id="question_correction" style="scrollbar-width: thin;scrollbar-color: #fde68aaf rgba(0,0,0,40%)" class="text-start px-2 h-full
+          overflow-y-auto scroll-smooth">
+          <div>
+            <div class="font-semibold flex flex-col gap-y-6">
 
-      <main style="scrollbar-width: thin;scrollbar-color: #ffc32dab #073b4c;"
-        class="h-[68%] rounded-[28px] overflow-y-auto scroll-smooth p-2">
-        <div>
-          <div class="font-semibold flex flex-col gap-y-6">
+              @for(question_done of questions_done; track $index){
 
-            @for(question_done of questions_done; track $index){
-
-            <div class="flex flex-col gap-y-3.5">
-              <div style="text-shadow: 0 0 15px #ffc32db0;" class="tracking-wide text-black">
-                {{question_done.question.question}}
-              </div>
-              @if(question_done.rightAnswer===question_done.userAnswer){
-              <div style="text-shadow:0 0 10px rgba(5, 150, 105,0.5)" class="flex items-center gap-x-2 text-green-900">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"
-                  data-slot="icon" class="size-6">
-                  <path fill-rule="evenodd"
-                    d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z"
-                    clip-rule="evenodd" />
-                </svg>
-                {{question_done.rightAnswer}}
-              </div>
-              }@else{
               <div class="flex flex-col gap-y-3.5">
-                <div style="text-shadow:0 0 10px rgba(220, 38, 38,0.5)" class="flex items-center gap-x-2 text-red-900">
-                  <svg width="19.5" height="19.5" viewBox="0 0 19.5 19.5" fill="none" stroke="none" version="1.1"
-                    xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
-                    <path id="Forme"
-                      d="M9.75 0C4.36499 0 0 4.36499 0 9.75C0 15.135 4.36499 19.5 9.75 19.5C15.135 19.5 19.5 15.135 19.5 9.75C19.5 4.36499 15.135 0 9.75 0C9.75 0 9.75 0 9.75 0ZM8.02997 6.96997C7.84302 6.76935 7.56146 6.68677 7.29572 6.75458C7.02997 6.82245 6.82245 7.02997 6.75458 7.29572C6.68677 7.56146 6.76935 7.84302 6.96997 8.02997C6.96997 8.02997 8.69 9.75 8.69 9.75C8.69 9.75 6.96997 11.47 6.96997 11.47C6.76935 11.657 6.68677 11.9385 6.75458 12.2043C6.82245 12.47 7.02997 12.6775 7.29572 12.7454C7.56146 12.8132 7.84302 12.7307 8.02997 12.53C8.02997 12.53 9.75 10.81 9.75 10.81C9.75 10.81 11.47 12.53 11.47 12.53C11.657 12.7307 11.9385 12.8132 12.2043 12.7454C12.47 12.6775 12.6775 12.47 12.7454 12.2043C12.8132 11.9385 12.7307 11.657 12.53 11.47C12.53 11.47 10.81 9.75 10.81 9.75C10.81 9.75 12.53 8.02997 12.53 8.02997C12.7307 7.84302 12.8132 7.56146 12.7454 7.29572C12.6775 7.02997 12.47 6.82245 12.2043 6.75458C11.9385 6.68677 11.657 6.76935 11.47 6.96997C11.47 6.96997 9.75 8.69 9.75 8.69L8.02997 6.96997C8.02997 6.96997 8.02997 6.96997 8.02997 6.96997Z"
-                      style="fill:rgb(127, 29, 29);fill-rule:evenodd;mix-blend-mode:normal;" />
-                  </svg>
-                  {{question_done.userAnswer}}
+                <div style="text-shadow:0 0 8px rgba(0,0,0,67%);" class="tracking-wide text-gray-200 font-medium">
+                  {{question_done.question.question}}
                 </div>
-                <div style="text-shadow:0 0 10px rgba(5, 150, 105,0.5)"
-                  class="flex items-center gap-x-2 text-green-900">
+                @if(question_done.rightAnswer===question_done.userAnswer){
+                <div class="flex items-center gap-x-2 text-[#10D23A]">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"
                     data-slot="icon" class="size-6">
                     <path fill-rule="evenodd"
@@ -72,13 +50,36 @@
                   </svg>
                   {{question_done.rightAnswer}}
                 </div>
+                }@else{
+                <div class="flex flex-col gap-y-3.5">
+                  <div class="flex items-center gap-x-2 text-red-400">
+                    <svg width="19.5" height="19.5" viewBox="0 0 19.5 19.5" fill="none" stroke="none" version="1.1"
+                      xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+                      <path id="Forme"
+                        d="M9.75 0C4.36499 0 0 4.36499 0 9.75C0 15.135 4.36499 19.5 9.75 19.5C15.135 19.5 19.5 15.135 19.5 9.75C19.5 4.36499 15.135 0 9.75 0C9.75 0 9.75 0 9.75 0ZM8.02997 6.96997C7.84302 6.76935 7.56146 6.68677 7.29572 6.75458C7.02997 6.82245 6.82245 7.02997 6.75458 7.29572C6.68677 7.56146 6.76935 7.84302 6.96997 8.02997C6.96997 8.02997 8.69 9.75 8.69 9.75C8.69 9.75 6.96997 11.47 6.96997 11.47C6.76935 11.657 6.68677 11.9385 6.75458 12.2043C6.82245 12.47 7.02997 12.6775 7.29572 12.7454C7.56146 12.8132 7.84302 12.7307 8.02997 12.53C8.02997 12.53 9.75 10.81 9.75 10.81C9.75 10.81 11.47 12.53 11.47 12.53C11.657 12.7307 11.9385 12.8132 12.2043 12.7454C12.47 12.6775 12.6775 12.47 12.7454 12.2043C12.8132 11.9385 12.7307 11.657 12.53 11.47C12.53 11.47 10.81 9.75 10.81 9.75C10.81 9.75 12.53 8.02997 12.53 8.02997C12.7307 7.84302 12.8132 7.56146 12.7454 7.29572C12.6775 7.02997 12.47 6.82245 12.2043 6.75458C11.9385 6.68677 11.657 6.76935 11.47 6.96997C11.47 6.96997 9.75 8.69 9.75 8.69L8.02997 6.96997C8.02997 6.96997 8.02997 6.96997 8.02997 6.96997Z"
+                        style="fill:rgb(252, 106, 106);fill-rule:evenodd;mix-blend-mode:normal;" />
+                    </svg>
+                    {{question_done.userAnswer}}
+                  </div>
+                  <div class="flex items-center gap-x-2 text-[#10D23A]">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"
+                      data-slot="icon" class="size-6">
+                      <path fill-rule="evenodd"
+                        d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z"
+                        clip-rule="evenodd" />
+                    </svg>
+                    {{question_done.rightAnswer}}
+                  </div>
+                </div>
+                }
               </div>
               }
             </div>
-            }
           </div>
-        </div>
+
+        </main>
       </main>
-    </main>
+
+    </div>
   </div>
 </div>

@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject, OnInit, signal } from '@angular/core';
 import { HeaderComponent } from '../header/header.component';
 import { Router } from '@angular/router';
 
@@ -10,8 +10,8 @@ import { Router } from '@angular/router';
 })
 export default class LoadingPageComponent implements OnInit {
   router = inject(Router);
-  w_progress: string = '';
-  progress_counter: string = '';
+  w_progress = signal<string>('');
+  progress_counter = signal<string>('');
 
   attendre(time: number) {
     return new Promise((resolve) => {
@@ -23,19 +23,20 @@ export default class LoadingPageComponent implements OnInit {
   isLoading = true;
   async progresser() {
     if (this.i <= this.fin) {
-      this.w_progress = `width:${this.i}%`;
-      this.progress_counter = `${this.i}`;
-      if (this.i == 50 || this.i == 62) {
-        await this.attendre(1000);
+      this.w_progress.set(`width:${this.i}%`);
+      this.progress_counter.set(`${this.i}`);
+      if (this.i == 99) {
+        this.w_progress.set(`width:${this.i + 1}%`);
+        this.progress_counter.set(`${this.i + 1}`);
       }
-      this.i++;
+      this.i += 3;
       await this.attendre(177);
       this.progresser();
-    }
-    if (this.i == 101) {
+    } else {
       this.router.navigate(['home']);
     }
   }
+
   ngOnInit(): void {
     this.progresser();
   }

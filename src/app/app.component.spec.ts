@@ -14,16 +14,18 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have the 'ng_refresh_your_mind_quiz_app' title`, () => {
+  it(`should have the 'Refresh Your Mind - Quiz Informatique' title`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('ng_refresh_your_mind_quiz_app');
+    expect(app.title).toEqual('Refresh Your Mind - Quiz Informatique');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, ng_refresh_your_mind_quiz_app');
+    expect(compiled.querySelector('h1')?.textContent).toContain(
+      'REfresh your mind'
+    );
   });
 });

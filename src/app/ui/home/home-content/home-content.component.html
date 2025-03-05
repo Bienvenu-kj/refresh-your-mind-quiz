@@ -1,0 +1,69 @@
+<!--<></>-->
+<style>
+  @media (max-width <=390px) {
+    .ssm {
+      width: 100%;
+    }
+  }
+
+</style>
+
+<div
+  class="container py-16 relative max-w-screen-sm m-auto h-full flex-col items-center">
+  <header class="w-full flex justify-center">
+    <app-header class="" [title_color]="'text-white'" />
+  </header>
+
+  <!-- <audio id="musicGame" controls>
+    <source
+      src="audios/musics/ambiance-relax-observation-1-12689.mp3"
+      type="audio/mpeg"
+    />
+    Le navigateur ne supporte pas l'élément audio.
+  </audio> -->
+  <main class="mt-[10rem] w-full flex justify-center">
+    <div class="flex flex-col gap-6 w-full items-center">
+      <button routerLink="/gaming" class="normal_button ssm  bg-[rgba(0,0,0,70%)] min-w-[55%] max-w-full max-h-14 px-3 py-[0.7rem] tracking-[0.06rem] border-3 border-yellow-200 text-yellow-200
+        font-bold rounded-[1.85rem] text-[1.15rem]">
+        Jouer la partie
+      </button>
+      <button class="normal_button ssm bg-[rgba(0,0,0,70%)] min-w-[55%] max-w-full max-h-14 px-3 py-[0.7rem] tracking-[0.06rem] border-3 border-yellow-200 text-yellow-200
+        font-bold rounded-[1.85rem] text-[1.15rem]" routerLink='/home/apropos'>
+        Apropos de
+      </button>
+
+      <!-- <button class="tracking-wider border-3 text-[#073b4c] font-bold w-[192px] h-[57px] rounded-[44px]">
+        Choisir une partie
+      </button>
+
+      <button
+        class="flex justify-center border-3 border-[#073b4c] gap-x-4 items-center tracking-wider text-white font-bold w-[192px] h-[57px] rounded-[44px]"
+        (click)="SetsoundGameOnOff()">
+        @if(material_icon){
+
+        <span class="material-icons" [class.text-green-900]="music_game_state()"
+          [class.text-red-900]="!music_game_state()">{{ music_game_state() ? "volume_up" : "volume_off" }}</span>
+        }@else{ @if(music_game_state()){
+        <svg xmlns="http://www.w3.org/2000/svg" fill="rgba(6, 78, 5,1)" viewBox="0 0 24 24" stroke-width="1.5" stroke=""
+          aria-hidden="true" data-slot="icon" class="text-green-900 size-6">
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="M19.114 5.636a9 9 0 0 1 0 12.728M16.463 8.288a5.25 5.25 0 0 1 0 7.424M6.75 8.25l4.72-4.72a.75.75 0 0 1 1.28.53v15.88a.75.75 0 0 1-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.009 9.009 0 0 1 2.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75Z" />
+        </svg>
+        }@else {
+        <svg xmlns="http://www.w3.org/2000/svg" fill="rgba(127, 29, 29,1)" viewBox="0 0 24 24" stroke-width="1.5"
+          stroke="currentColor" aria-hidden="true" data-slot="icon" class="text-red-900 size-6">
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="M17.25 9.75 19.5 12m0 0 2.25 2.25M19.5 12l2.25-2.25M19.5 12l-2.25 2.25m-10.5-6 4.72-4.72a.75.75 0 0 1 1.28.53v15.88a.75.75 0 0 1-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.009 9.009 0 0 1 2.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75Z" />
+        </svg>
+
+        } } @if(music_game_state()){
+        <span class="text-green-900">ouvert</span>
+
+        }@else {
+
+        <span class="text-red-900">fermé</span>
+        }
+      </button> -->
+    </div>
+  </main>
+</div>

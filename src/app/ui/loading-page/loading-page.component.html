@@ -1,48 +1,29 @@
-<style>
-  @keyframes progress {
-    from {
-      width: 0;
-    }
-    to {
-      width: 100%;
-    }
-  }
-  .progressAnim {
-    animation-name: progress;
-    animation-duration: 20s;
-    animation-timing-function: ease-out;
-  }
-</style>
-<div
-  class="container py-16 h-full relative max-w-screen-sm m-auto flex flex-col items-center justify-between"
->
-  <app-header />
+<div class="container py-16 h-full max-w-screen-sm m-auto flex flex-col items-center justify-between">
+  <header>
+    <app-header [title_color]="'text-white'" />
+  </header>
   <main>
-    <h2 class="text-[1.1rem] font-[800] tracking-wide text-[#052834] text-center">Informatic Quiz</h2>
+    <h2 style="text-shadow:0 0 8px rgba(0,0,0,67%);"
+      class="text-[1.3rem] font-[800] text-gray-100 text-center tracking-wider">Quiz informatique</h2>
   </main>
   <footer class="">
-    <section id="author" class="">
-      <p class="font-medium text-center text-xs text-[#052834]">Made by</p>
-      <p class="font-extrabold text-sm text-[#052834] text-center">
+    <section id="author" aria-label="nom de l'auteur de l'application" class="">
+      <p style="text-shadow:0 0 8px rgba(0,0,0,67%); font-size:0.75rem"
+        class="font-medium text-center text-gray-100  tracking-wide">
+        Made by</p>
+      <p style="text-shadow:0 0 8px rgba(0,0,0,67%);"
+        class="font-bold text-sm text-gray-100 text-center tracking-wider">
         Bienvenu Kajirifo Luc
       </p>
     </section>
-    <section id="progess_bar_container" class="mt-12 flex gap-x-1 items-center">
-      <div
-        id="progress_bar_container"
-        class="border-2 border-[#ffd166] h-2 w-48 rounded-xl"
-      >
-        <div
-          id="progress_bar_content"
-          class="bg-[#073b4c] h-full rounded-xl w-0"
-          [style]="w_progress"
-        ></div>
+    <section id="progess_bar_container" class="mt-12 flex gap-y-1 items-center flex-col">
+      <div id="progress_bar_container" class="border-[3px] border-yellow-200 h-[14px] w-48 rounded-xl">
+
+        <div id="progress_bar_content" class="bg-[rgba(0,0,0,70%)] h-full rounded-xl w-0" [style]="w_progress()"></div>
       </div>
-      <div
-        id="progress_counter"
-        class="text-[0.55rem] text-center text-white font-bold"
-      >
-        {{ progress_counter }} %
+      <div id="progress_counter" style="text-shadow:0 0 8px rgba(255, 209, 102, 0.685);"
+        class="text-[0.7rem] text-center text-yellow-200 font-bold tracking-[0.069rem]">
+        {{ progress_counter() }} %
       </div>
     </section>
   </footer>

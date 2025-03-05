@@ -1,123 +1,62 @@
 <style>
-  .full-container {
-    border: 1px solid #808080;
-    background: linear-gradient(45deg, #ffc52d 1.12%, #073b4c 82.02%);
-    background-blend-mode: normal;
+  .index {
+    z-index: -1;
   }
-
 </style>
+<div class="relative w-full h-full">
+  <div class="index blur-[8px] w-full h-full absolute top-0 left-0 princip_background">
+    <div class="princip_background w-full h-full">
 
-<div class="full-container w-full h-full">
-  <div class="container py-14 px-4 h-full relative max-w-screen-sm m-auto">
-    <main class="h-full w-full rounded-[44px] p-4" style="box-shadow:0 0 15px #80808081">
-      <header class="flex flex-col gap-y-6 rounded-[28px] mb-12">
-        <div class="">
-          <h1 class="text-2xl text-center font-bold text-[#FFC52D] flex flex-col items-center gap-y-2">Voici
-            ton score
-            <!-- <span class="h-0.5 w-[50%] bg-[#FFC52D]"></span> -->
-          </h1>
-        </div>
-        <div class="">
-          <div class="font-bold text-xl mb-4 text-[#FFC52D] flex gap-x-1 justify-center"
-            style="text-shadow:0 0 15px #FFC52D">
-            @if(quizS.score_ ()<=40){ Tu peux t'ameliorer ! }@else if(quizS.score_ ()<=60){ Pas mal, continue comme ça !
-              }@else if (quizS.score_ ()<=80) { Très bien, tu as fais de gros progrès ! }@else{ Excellent ! } <svg
-              xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"
-              data-slot="icon" class="size-6">
-              <path fill-rule="evenodd"
-                d="M9 4.5a.75.75 0 0 1 .721.544l.813 2.846a3.75 3.75 0 0 0 2.576 2.576l2.846.813a.75.75 0 0 1 0 1.442l-2.846.813a3.75 3.75 0 0 0-2.576 2.576l-.813 2.846a.75.75 0 0 1-1.442 0l-.813-2.846a3.75 3.75 0 0 0-2.576-2.576l-2.846-.813a.75.75 0 0 1 0-1.442l2.846-.813A3.75 3.75 0 0 0 7.466 7.89l.813-2.846A.75.75 0 0 1 9 4.5ZM18 1.5a.75.75 0 0 1 .728.568l.258 1.036c.236.94.97 1.674 1.91 1.91l1.036.258a.75.75 0 0 1 0 1.456l-1.036.258c-.94.236-1.674.97-1.91 1.91l-.258 1.036a.75.75 0 0 1-1.456 0l-.258-1.036a2.625 2.625 0 0 0-1.91-1.91l-1.036-.258a.75.75 0 0 1 0-1.456l1.036-.258a2.625 2.625 0 0 0 1.91-1.91l.258-1.036A.75.75 0 0 1 18 1.5ZM16.5 15a.75.75 0 0 1 .712.513l.394 1.183c.15.447.5.799.948.948l1.183.395a.75.75 0 0 1 0 1.422l-1.183.395c-.447.15-.799.5-.948.948l-.395 1.183a.75.75 0 0 1-1.422 0l-.395-1.183a1.5 1.5 0 0 0-.948-.948l-1.183-.395a.75.75 0 0 1 0-1.422l1.183-.395c.447-.15.799-.5.948-.948l.395-1.183A.75.75 0 0 1 16.5 15Z"
-                clip-rule="evenodd" />
-              </svg>
-          </div>
-          <div class="flex flex-col w-max m-auto">
-            <div class="border-[#ffc52d] border-2 rounded-[11px] h-3 w-64 self-center">
-              @let width_=('width:'+(quizS.score_()*256/100)+'px');
-              <div class="bg-[#073b4c] w-full h-full rounded-[11px] flex relative" [style]="width_"><svg
-                  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#ffc52d" aria-hidden="true"
-                  data-slot="icon" class="size-4.5 absolute top-[-0.3rem] left-[97%]">
-                  <path fill-rule="evenodd"
-                    d="M9 4.5a.75.75 0 0 1 .721.544l.813 2.846a3.75 3.75 0 0 0 2.576 2.576l2.846.813a.75.75 0 0 1 0 1.442l-2.846.813a3.75 3.75 0 0 0-2.576 2.576l-.813 2.846a.75.75 0 0 1-1.442 0l-.813-2.846a3.75 3.75 0 0 0-2.576-2.576l-2.846-.813a.75.75 0 0 1 0-1.442l2.846-.813A3.75 3.75 0 0 0 7.466 7.89l.813-2.846A.75.75 0 0 1 9 4.5ZM18 1.5a.75.75 0 0 1 .728.568l.258 1.036c.236.94.97 1.674 1.91 1.91l1.036.258a.75.75 0 0 1 0 1.456l-1.036.258c-.94.236-1.674.97-1.91 1.91l-.258 1.036a.75.75 0 0 1-1.456 0l-.258-1.036a2.625 2.625 0 0 0-1.91-1.91l-1.036-.258a.75.75 0 0 1 0-1.456l1.036-.258a2.625 2.625 0 0 0 1.91-1.91l.258-1.036A.75.75 0 0 1 18 1.5ZM16.5 15a.75.75 0 0 1 .712.513l.394 1.183c.15.447.5.799.948.948l1.183.395a.75.75 0 0 1 0 1.422l-1.183.395c-.447.15-.799.5-.948.948l-.395 1.183a.75.75 0 0 1-1.422 0l-.395-1.183a1.5 1.5 0 0 0-.948-.948l-1.183-.395a.75.75 0 0 1 0-1.422l1.183-.395c.447-.15.799-.5.948-.948l.395-1.183A.75.75 0 0 1 16.5 15Z"
-                    clip-rule="evenodd" />
-                </svg>
-              </div>
-            </div>
-            <div class="self-end text-[rgba(255,195,45,0.56)]">
-              {{quizS.score | async}}/{{expeted_score}}
-            </div>
-          </div>
-        </div>
-        <div class="" align="center">
-          <button style="text-shadow:0 0 10px rgba(255, 195, 45, 0.4)" routerLink="/quiz-final-result/result-details"
-            class="tracking-wide flex items-center gap-x-4 justify-center border-3 rounded-lg w-55 h-14 text-[#073b4c]
-            border-[#ffc32da4] font-bold">Voir
-            les
-            détails
-
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"
-              data-slot="icon" class="size-7">
-              <path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" color="#ffc52d" />
-              <path fill-rule="evenodd"
-                d="M1.323 11.447C2.811 6.976 7.028 3.75 12.001 3.75c4.97 0 9.185 3.223 10.675 7.69.12.362.12.752 0 1.113-1.487 4.471-5.705 7.697-10.677 7.697-4.97 0-9.186-3.223-10.675-7.69a1.762 1.762 0 0 1 0-1.113ZM17.25 12a5.25 5.25 0 1 1-10.5 0 5.25 5.25 0 0 1 10.5 0Z"
-                clip-rule="evenodd" />
-            </svg>
-
-          </button>
-        </div>
+    </div>
+  </div>
+  <div class="container text-white z-index-10 max-w-screen-sm py-5 max-[640px]:px-5 px-6 m-auto h-full">
+    <div
+      class="text-center h-full w-full border-[5px] bg-[rgba(0,0,0,70%)] border-yellow-200 rounded-[2.5rem] py-5 flex flex-col gap-y-11 max-[358px]:gap-y-7">
+      <header class="">
+        <h1 class="text-2xl text-yellow-200 font-[800] tracking-wider">
+          Voici
+          ton score !
+        </h1>
       </header>
-      <main class="flex flex-col gap-y-4 items-center rounded-[28px]">
+      <main class="flex flex-col gap-y-3 items-center">
         <div class="">
-          <button (click)="resultPageRedirection('gaming')" class="flex items-center border-3 border-[#ffc52d] rounded-[1.75rem] h-[3.68rem] w-[14rem] font-bold
-            text-[1.125em] text-white bg-[rgba(0,0,0,0.64)]">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"
-              data-slot="icon" class="border border-[#ffc52d] size-6 bg-[rgba(0,0,0,0.64)] p-1 rounded-[50%] relative top-[-40%]
-              bottom-[-5%]">
-              <path fill-rule="evenodd"
-                d="M4.755 10.059a7.5 7.5 0 0 1 12.548-3.364l1.903 1.903h-3.183a.75.75 0 1 0 0 1.5h4.992a.75.75 0 0 0 .75-.75V4.356a.75.75 0 0 0-1.5 0v3.18l-1.9-1.9A9 9 0 0 0 3.306 9.67a.75.75 0 1 0 1.45.388Zm15.408 3.352a.75.75 0 0 0-.919.53 7.5 7.5 0 0 1-12.548 3.364l-1.902-1.903h3.183a.75.75 0 0 0 0-1.5H2.984a.75.75 0 0 0-.75.75v4.992a.75.75 0 0 0 1.5 0v-3.18l1.9 1.9a9 9 0 0 0 15.059-4.035.75.75 0 0 0-.53-.918Z"
-                clip-rule="evenodd" />
-            </svg>
-
-            Rejouer
-            le
-            quiz
-          </button>
+          <h2 [ngClass]="personnel_message_color"
+            class="text-[1.16rem] tracking-wider max-w-[80%]  m-auto flex flex-col justify-center text-center">
+            <span class="material-icons h-max"> {{personel_message_icon}} </span>
+            {{personnel_message}}
+          </h2>
         </div>
-        <div class="">
-          <button class="flex items-center border-3 border-[#ffc52d] rounded-[1.75rem] h-[3.68rem] w-[14rem] font-bold text-[1.125em]
-              text-white bg-[rgba(0,0,0,0.64)]">
-
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"
-              data-slot="icon" class="border border-[#ffc52d] size-6 bg-[rgba(0,0,0,0.64)] p-1 rounded-[50%] relative
-              top-[-40%] bottom-[-5%]">
-              <path fill-rule="evenodd"
-                d="M15.75 4.5a3 3 0 1 1 .825 2.066l-8.421 4.679a3.002 3.002 0 0 1 0 1.51l8.421 4.679a3 3 0 1 1-.729 1.31l-8.421-4.678a3 3 0 1 1 0-4.132l8.421-4.679a3 3 0 0 1-.096-.755Z"
-                clip-rule="evenodd" />
-            </svg>
-
-            Partager mon
-            score
-
-          </button>
-        </div>
-        <div class="">
-          <button (click)="resultPageRedirection('home')" class="flex items-center border-3 border-[#ffc52d] rounded-[1.75rem] h-[3.68rem] w-[14rem] font-bold
-            text-[1.125em] text-white bg-[rgba(0,0,0,0.64)]">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"
-              data-slot="icon" class="border border-[#ffc52d] size-6 bg-[rgba(0,0,0,0.64)] p-1 rounded-[50%] relative
-              top-[-40%] bottom-[-5%]">
-              <path
-                d="M11.47 3.841a.75.75 0 0 1 1.06 0l8.69 8.69a.75.75 0 1 0 1.06-1.061l-8.689-8.69a2.25 2.25 0 0 0-3.182 0l-8.69 8.69a.75.75 0 1 0 1.061 1.06l8.69-8.689Z" />
-              <path
-                d="m12 5.432 8.159 8.159c.03.03.06.058.091.086v6.198c0 1.035-.84 1.875-1.875 1.875H15a.75.75 0 0 1-.75-.75v-4.5a.75.75 0 0 0-.75-.75h-3a.75.75 0 0 0-.75.75V21a.75.75 0 0 1-.75.75H5.625a1.875 1.875 0 0 1-1.875-1.875v-6.198a2.29 2.29 0 0 0 .091-.086L12 5.432Z" />
-            </svg>
-
-            Retour
-            à
-            l'accueil
+        <section id="score_result" class="relative w-[50%] flex flex-col items-center mt-1">
+          @let score_width='width:'+score+'%';
+          <div id="score_bar_container" class="rounded-lg bg-[rgba(0,0,0,100%)] h-3 w-full">
+            <div id="score-bar" [style]="score_width" [ngClass]="personnel_color ? personnel_color:''"
+              class="bga-[#28A745] h-full rounded-lg">
+            </div>
+          </div>
+          <span style="font-family:rajdhani,sans-serif;" [ngClass]='personnel_message_color'
+            class="self-end font-bold text-[0.95rem] mt-1 flex gap-x-[0.14rem]">
+            <span class="tracking-wide">{{quizS.score | async }}</span><span>/</span><span
+              class="tracking-wide">{{expeted_score}}</span>
+          </span>
+        </section>
+        <div style="font-family:rajdhani,sans-serif;" class="">
+          <button routerLink="/quiz-final-result/result-details" [ngClass]="personnel_message_color" class="flex hover:bg-[rgba(0,0,0,40%)]  transition
+            gap-x-1 items-center justify-center  rounded-[1.3rem]
+            result-det-btn px-4 py-2 text-[1.17rem] font-[800] text-center tracking-wider mt-2"
+            style="text-shadow:0 0 8px rgba(0,0,0,67%);">Voir les details
           </button>
         </div>
       </main>
-
-
-    </main>
+      <footer class="flex flex-col gap-y-5 items-center">
+        @let buttons=["Rejouer !","Accueil"];
+        @for (button of buttons; track $index) {
+        <button (click)="redirectionOuPartagerScore(button)" class="normal_button w-[55%] max-w-full relative h-max px-3 py-[0.7rem] tracking-[0.06rem] border-3 border-yellow-200 text-yellow-200
+        font-bold rounded-[1.85rem] text-[1.10rem]">
+          <span class="material-icons absolute top-[-30%] left-[-4%] border border-yellow-200 bg-[rgba(0,0,0,0.64)] p-1
+            rounded-[50%]">{{btn_icons[$index]}}</span>
+          {{button}}</button>
+        }
+      </footer>
+    </div>
   </div>
 </div>

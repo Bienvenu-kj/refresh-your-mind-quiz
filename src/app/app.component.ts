@@ -17,27 +17,42 @@ import { Subscription } from 'rxjs';
   styleUrl: './app.component.css',
 })
 export class AppComponent implements OnInit, OnDestroy {
-  title = 'ng_refresh_your_mind_quiz_app';
+  title = 'Refresh Your Mind - Quiz Informatique';
   MsM = inject(MusicSoundManagerService);
   audio = new Audio();
 
-  //Dans les 7 lignes suivantes, nous mettons une ecouteur globales pour tous nos boutons
-  // @HostListener('click', ['$event'])
-  // onClique(event: Event) {
-  //   const target = event.target as HTMLElement;
-  //   if (target.tagName == 'BUTTON') {
-  //     this.MsM.SetButtonSound();
-  //   }
-  // }
+  // Dans les 7 lignes suivantes, nous mettons une ecouteur globales pour tous nos boutons
+  @HostListener('click', ['$event'])
+  onClique(event: Event) {
+    const target = event.target as HTMLElement;
+    if (target.classList.contains('normal_button')) {
+      this.MsM.SetNormalButtonSound();
+    } else if (target.classList.contains('navigation_button')) {
+      this.MsM.SetNavigationButtonSound();
+    }
+  }
 
   @HostListener('mouseover', ['$event'])
   onMouseOver(event: Event) {
     const target = event.target as HTMLElement;
     const target_style = target.style;
-    if (target.tagName == 'BUTTON') {
-      target_style.transition = '0.6s ease-in-out';
-      target_style.transform = 'translateX(-2%)';
-      target_style.boxShadow = '1px 1px 20px #ffd166';
+    if (window.innerWidth > 768) {
+      if (
+        target.tagName == 'BUTTON' &&
+        !target.classList.contains('onChoose-answer') &&
+        !target.classList.contains('result-det-btn') &&
+        !target.classList.contains('wrong-answer') &&
+        !target.classList.contains('good-answer')
+      ) {
+        target_style.transition = '0.5s ease-in-out';
+        target_style.transform = 'translateX(-1.3%)';
+        target_style.boxShadow = '0px 1px 2px #ffd166';
+      } else if (target.classList.contains('btn_message')) {
+        let targetParent = target.parentElement as HTMLElement;
+        targetParent.style.transition = '0.5s ease-in-out';
+        targetParent.style.transform = 'translateX(-1.3%)';
+        targetParent.style.boxShadow = '0px 1px 2px #ffd166';
+      }
     }
   }
   @HostListener('mouseout', ['$event'])
@@ -48,6 +63,11 @@ export class AppComponent implements OnInit, OnDestroy {
       target_style.transition = '0.5s ease-in-out';
       target_style.transform = '';
       target_style.boxShadow = '';
+    } else if (target.classList.contains('btn_message')) {
+      let targetParent = (target.parentElement as HTMLElement).style;
+      targetParent.transition = '0.5s ease-in-out';
+      targetParent.transform = '';
+      targetParent.boxShadow = '';
     }
   }
 

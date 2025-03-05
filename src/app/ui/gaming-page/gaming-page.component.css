@@ -1,1 +1,146 @@
+@media (width > 630px) and (width<1060px) {
+  #questions {
+    text-shadow: 0 0 20px #ffc62d;
+  }
+}
 
+@keyframes animateQuest {
+  20%,
+  65% {
+    box-shadow: 1px 1px 40px #ffd166;
+  }
+
+  45% {
+    box-shadow: 1px 1px 5px #ffd166;
+  }
+
+  70% {
+    box-shadow: 1px 1px 20px #ffd166;
+  }
+
+  100% {
+    box-shadow: 1px 1px 17px #ffd166;
+  }
+}
+
+.question-aimation {
+  animation-name: animateQuest;
+  animation-duration: 30s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-delay: 0ms;
+  animation-fill-mode: both;
+}
+
+@keyframes onChoose-answer-animation {
+  from {
+    border-color: #f0c460;
+    box-shadow: 1px 1px 20px #f0c460 inset;
+  }
+
+  to {
+    border-color: #ffd166;
+    box-shadow: 1px 1px 20px #ffd166;
+  }
+}
+
+.onChoose-answer {
+  animation-name: onChoose-answer-animation;
+  animation-timing-function: ease;
+  animation-duration: 0.5s;
+  animation-iteration-count: 5;
+}
+
+@keyframes good-answer-animation {
+  from {
+    border-color: #fde68a;
+    background: rgba(0, 0, 0, 70%);
+  }
+
+  to {
+    border-color: green;
+    box-shadow: 0px 0px 15px rgba(0, 68, 0, 0.7) inset;
+  }
+}
+
+.good-answer {
+  border-color: green;
+  color: white;
+  background: green;
+  box-shadow: 0px 0px 15px rgba(0, 68, 0, 0.7) inset;
+  animation-name: good-answer-animation;
+  animation-timing-function: ease;
+  animation-duration: 0.4s;
+  animation-iteration-count: 6;
+}
+
+@keyframes wrong-answer-animation {
+  from {
+    border-color: #fde68a;
+    background: rgba(0, 0, 0, 70%);
+  }
+
+  to {
+    border-color: rgb(127, 29, 29);
+    box-shadow: 0px 0px 10px rgba(58, 13, 13, 0.7) inset;
+  }
+}
+
+.wrong-answer {
+  border-color: rgb(127, 29, 29);
+  color: white;
+  background: rgb(127, 29, 29);
+  box-shadow: 0px 0px 10px rgba(58, 13, 13, 0.7) inset;
+  animation-name: wrong-answer-animation;
+  animation-timing-function: ease;
+  animation-duration: 0.4s;
+  animation-iteration-count: 6;
+}
+@keyframes disparition {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+}
+.disparition {
+  animation-name: disparition;
+  animation-timing-function: ease-in-out;
+  animation-duration: 1.2s;
+}
+
+@keyframes chargement {
+  from {
+    transform: translateY(-50%);
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.chargement {
+  animation-name: chargement;
+  animation-timing-function: ease-in-out;
+  animation-duration: 1.2s;
+}
+@keyframes btn_message_chgmnt {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+    transform: translateY(1);
+  }
+}
+.btn_message_chgmnt {
+  animation-name: btn_message_chgmnt;
+  animation-timing-function: ease-in-out;
+  animation-duration: 1.2s;
+  /* animation-delay: 1.1s; */
+}

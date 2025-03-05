@@ -1,137 +1,78 @@
-<!--<></>-->
-<style>
-  @media (width > 630px) and (width<1060px) {
-    #questions {
-      text-shadow: 0 0 20px #ffc62d;
-    }
-  }
+<div [class]="chargement()?'chargement':'disparition'"
+  class="container transition duration-1100 flex flex-col gap-y-10 items-center py-7 px-4 h-full relative max-w-screen-sm m-auto">
 
+  <header class="bg-[rgba(0,0,0,70%)] flex pr-7 pl-3 w-[80%] min-[630px]:w-[60%] justify-between border-[4.7px] rounded-[2.5rem]
+  border-yellow-200 h-[11%]">
+    <div class=" flex items-center relative">
+      <div class="h-max w-max relative top-[-8%] flex items-center">
 
-  @keyframes animateQuest {
-
-    20%,
-    65% {
-      box-shadow: 1px 1px 40px #ffd166;
-    }
-
-    45% {
-      box-shadow: 1px 1px 5px #ffd166;
-    }
-
-    70% {
-      box-shadow: 1px 1px 20px #ffd166;
-    }
-
-    100% {
-      box-shadow: 1px 1px 17px #ffd166;
-    }
-  }
-
-  .question-aimation {
-    animation-name: animateQuest;
-    animation-duration: 30s;
-    animation-timing-function: ease-in-out;
-    animation-iteration-count: infinite;
-    animation-delay: 0ms;
-    animation-fill-mode: both;
-  }
-
-  @keyframes onChoose-answer-animation {
-    from {
-      border-color: #f0c460;
-      box-shadow: 1px 1px 20px #f0c460 inset;
-    }
-
-    to {
-      border-color: #ffd166;
-      box-shadow: 1px 1px 20px #ffd166;
-    }
-  }
-
-  .onChoose-answer {
-    animation-name: onChoose-answer-animation;
-    animation-timing-function: ease;
-    animation-duration: 0.5s;
-    animation-iteration-count: 5;
-  }
-
-  @keyframes good-answer-animation {
-    from {
-      border-color: #073b4c;
-      box-shadow: 1px 1px 20px #ffd166 inset;
-    }
-
-    to {
-      border-color: green;
-      box-shadow: 0px 0px 15px rgba(0, 128, 0, 0.644) inset;
-    }
-  }
-
-  .good-answer {
-    border-color: green;
-    animation-name: good-answer-animation;
-    animation-timing-function: ease;
-    animation-duration: 0.4s;
-    animation-iteration-count: 6;
-  }
-
-  @keyframes wrong-answer-animation {
-    from {
-      border-color: #073b4c;
-      box-shadow: 1px 1px 20px #ffd166 inset;
-    }
-
-    to {
-      border-color: rgb(127, 29, 29);
-      box-shadow: 0px 0px 10px rgba(127, 29, 29, 0.644) inset;
-    }
-  }
-
-  .wrong-answer {
-    border-color: rgb(127, 29, 29);
-    animation-name: wrong-answer-animation;
-    animation-timing-function: ease;
-    animation-duration: 0.4s;
-    animation-iteration-count: 6;
-  }
-
-</style>
-
-<div
-  class="container p-4 min-[630px]:px-4 min-[630px]:py-16 h-full relative max-w-screen-sm m-auto flex flex-col items-center justify-between">
-  <header style="box-shadow: 1px 1px 20px #ffd166 inset"
-    class="w-full h-15 flex justify-between items-center p-4 rounded-[44px]">
-    <div class="font-bold text-[17px] text-[#073b4c] flex gap-x-2 items-center">score <span
-        class="text-[#073b4c] font-bold relative border border-[#ffd166] rounded-[50px] p-1"> {{score()}} </span>
-    </div>
-    <div class="flex gap-x-1 items-center h-full">
-      <div class="h-full flex items-center">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="rgb(127, 29, 29)" viewBox="0 0 24 24" stroke-width="1.5"
-          stroke="#ffd166" aria-hidden="true" data-slot="icon" class="size-6">
-          <path stroke-linecap="round" stroke-linejoin="round"
-            d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+        <svg aria-label="icon de score" width="42" height="42.764" viewBox="0 0 52 53.764" fill="none" stroke="none"
+          version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" class="">
+          <defs>
+            <filter color-interpolation-filters="sRGB" x="-16.001" y="-17.764" width="18.001" height="19.764"
+              id="filter_1">
+              <feFlood flood-opacity="0" result="BackgroundImageFix_1" />
+              <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0" in="SourceAlpha" />
+              <feOffset dx="-2" dy="-5" />
+              <feGaussianBlur stdDeviation="6" />
+              <feColorMatrix type="matrix" values="0 0 0 0 0.992 0 0 0 0 0.902 0 0 0 0 0.541 0 0 0 1 0" />
+              <feBlend mode="normal" in2="BackgroundImageFix_1" result="Shadow_2" />
+              <feBlend mode="normal" in="SourceGraphic" in2="Shadow_2" result="Shape_3" />
+            </filter>
+          </defs>
+          <path id="Forme"
+            d="M9.9615 0.301464C9.83974 0.138287 9.65687 0.0316257 9.45489 0.00597811C9.25291 -0.01967 9.04919 0.037899 8.8905 0.165463C6.97405 1.70403 5.70992 3.9101 5.3515 6.34146C4.69468 5.86516 4.11895 5.28606 3.6465 4.62646C3.51658 4.44486 3.3125 4.33058 3.08977 4.31473C2.86704 4.29888 2.64883 4.38309 2.4945 4.54446C-0.21561 7.37949 -0.77777 11.6431 1.10489 15.0837C2.98756 18.5243 6.88151 20.3496 10.7304 19.5956C14.5792 18.8416 17.4966 15.682 17.942 11.7854C18.3873 7.88876 16.258 4.15239 12.6785 2.54946C11.6062 2.02803 10.6745 1.25716 9.9615 0.301461C9.9615 0.301461 9.9615 0.301464 9.9615 0.301464ZM12.7485 12.2655C12.7475 13.7476 11.8736 15.09 10.5188 15.6909C9.16395 16.2917 7.58232 16.0383 6.4831 15.0441C5.38388 14.05 4.97332 12.5017 5.4355 11.0935C6.06351 11.5585 6.78551 11.9035 7.56851 12.0935C7.78079 10.7244 8.46107 9.47128 9.49351 8.54746C11.3571 8.79563 12.7489 10.3854 12.7485 12.2655C12.7485 12.2655 12.7485 12.2655 12.7485 12.2655Z"
+            style="fill:#FDE68A;fill-rule:evenodd;filter:url(#filter_1);mix-blend-mode:normal;"
+            transform="translate(19 22)" />
         </svg>
       </div>
-      <div class="h-full flex items-center">
-        <span class="font-bold relative bottom-[1px] text-[#ffd166]"> {{vies()}} </span>
+      <span style="font-family:rajdhani,sans-serif;"
+        class="h-full flex items-center font-bold text-yellow-200 text-[1.2rem]">
+        {{score()}}
+      </span>
+    </div>
+    <div (click)="allerAl_accueil()" aria-label="home" class="navigation_button size-12 self-center transition flex items-center justify-center hover:bg-[rgba(0,0,0,40%)]
+      rounded-[50%]">
+
+      <svg class="size-5 text-white navigation_button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+        fill="currentColor" aria-hidden="true" data-slot="icon">
+        <path class="text-yellow-200"
+          d="M11.47 3.841a.75.75 0 0 1 1.06 0l8.69 8.69a.75.75 0 1 0 1.06-1.061l-8.689-8.69a2.25 2.25 0 0 0-3.182 0l-8.69 8.69a.75.75 0 1 0 1.061 1.06l8.69-8.689Z" />
+        <path
+          d="m12 5.432 8.159 8.159c.03.03.06.058.091.086v6.198c0 1.035-.84 1.875-1.875 1.875H15a.75.75 0 0 1-.75-.75v-4.5a.75.75 0 0 0-.75-.75h-3a.75.75 0 0 0-.75.75V21a.75.75 0 0 1-.75.75H5.625a1.875 1.875 0 0 1-1.875-1.875v-6.198a2.29 2.29 0 0 0 .091-.086L12 5.432Z" />
+      </svg>
+
+    </div>
+    <div class="relative flex gap-x-3 items-center">
+      <div class="">
+
+        <svg id="vies" aria-label="icon de vies" viewBox="0 0 24 24" fill="none" stroke="none" version="1.1"
+          class="size-[1.25rem]" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+          <path id="Chemin"
+            d="M11.5631 23.8807L11.5545 23.8767C11.5545 23.8767 11.5274 23.8607 11.5274 23.8607C11.369 23.7663 11.2119 23.6694 11.0561 23.5701C9.18267 22.3641 7.43186 20.9473 5.83275 19.3433C3.00062 16.4805 0 12.2324 0 7.00027C0 3.09617 3.03262 9.47714e-05 6.69292 9.47714e-05C8.75421 -0.0108428 10.7078 0.99632 12 2.73616C13.2925 0.995954 15.2466 -0.0112497 17.3083 9.47714e-05C20.9674 9.47714e-05 24 3.09617 24 7.00027C24 12.2337 20.9994 16.4818 18.1674 19.3419C16.5683 20.9459 14.8175 22.3627 12.944 23.5687C12.7882 23.6685 12.631 23.7658 12.4726 23.8607C12.4726 23.8607 12.4455 23.8767 12.4455 23.8767L12.4369 23.882C12.4369 23.882 12.4332 23.8834 12.4332 23.8834C12.1622 24.0389 11.8377 24.0389 11.5668 23.8834C11.5668 23.8834 11.5631 23.882 11.5631 23.882L11.5631 23.8807Z"
+            style="fill:rgb(16, 210, 58);fill-rule:evenodd;mix-blend-mode:normal;" />
+        </svg>
       </div>
+      <span style="font-family:rajdhani,sans-serif;"
+        class="font-bold text-[1.2rem] relative top-[3%] text-green-500">{{vies()}}</span>
     </div>
   </header>
-  <main style="box-shadow: 0 0 15px #ffd1665d"
-    class="w-full rounded-[44px] flex flex-col max-[630px]:gap-y-6 min-[630px]:flex-row items-center min-[630px]:justify-between p-4">
-    <div style="box-shadow: 1px 1px 20px #ffd166" id="questions"
-      class="question-aimation text-[#073b4c] border-3 font-semibold text-xl border-[#073b4c] p-6 max-w-[308px] max-h-[187px] rounded-[27px] bg-transparent flex items-center justify-center">
+  <main class="w-full h-[calc(90%-2.5rem)] flex flex-col items-center justify-between gap-y-4">
+    <header [@DispApparition]="apparaitre()?'apparition':'disparition'" style="text-shadow:0 0 8px rgba(0,0,0,90%);"
+      class="w-[90%] min-[630px]:w-[70%] tracking-wider rounded-[40px] text-yellow-200 border-yellow-200 bg-[rgba(0,0,0,70%)] flex
+      items-center justify-center text-center min-h-[35%] border-[4.7px] font-semibold text-[1.15rem] px-2">
       {{ question ? question.question : "" }}
-    </div>
-    <div id="answers" class="flex flex-col gap-5">
-
+    </header>
+    <main class="flex flex-col w-[90%] min-[630px]:w-[70%] gap-y-[1.1rem]">
       @for (choix of question.choices; track $index){
-      <button #buttonChoix (click)="validerReponse($event,buttonChoix,choix, question)"
-        [class.good-answer]="thereIsWrongChoice() && choix === question.answer && ChoiceAlreadyDone()"
-        class="tracking-wider border-3 text-[#073b4c] font-bold w-[192px] h-[57px] rounded-[44px] choice_button">
-        {{ choix }}
+      <button [@DispApparition]="apparaitre()?'apparition':'disparition'" style="text-shadow:0 0 8px rgba(0,0,0,90%);"
+        #buttonChoix (click)="validerReponse($event,buttonChoix,choix, question)"
+        [class.good-answer]="thereIsWrongChoice() && choix === question.answer && ChoiceAlreadyDone()" class="tracking-wider border-[4.7px] bg-[rgba(0,0,0,70%)] rounded-[40px] flex items-center justify-center choice_button w-full max-h-14 px-3
+        py-[0.8rem] border-yellow-200 text-yellow-200 font-semibold text-[1.11rem]">
+        <span [class]="chargement()?'btn_message_chgmnt':''" class="transition duration-500 btn_message">{{ choix
+          }}</span>
       </button>
       }
-    </div>
+    </main>
   </main>
 </div>

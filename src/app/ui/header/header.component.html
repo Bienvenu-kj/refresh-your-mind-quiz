@@ -1,13 +1,18 @@
   <header class="">
-    <h1 id="rEfreshyou" class="text-center font-[800] text-white text-lg tracking-wider">
+    <div class="" align="center">
+      <img class="size-[3.75rem]" src="1_objects@2x.png" alt="" srcset="" />
+    </div>
+    @if (isH1()){
+    <h1 style="text-shadow:0 0 8px rgba(0,0,0,67%);" [style]="tite_size_style?tite_size_style:''"
+      class="text-center font-[800] text-white tracking-wider">
       REfresh your mind
     </h1>
-    <div class="" align="center">
-      <img
-        class="size-[3.75rem]"
-        src="1_objects@2x.png"
-        alt=""
-        srcset=""
-      />
-    </div>
+
+    }@else{
+    <h2 style="text-shadow:0 0 8px rgba(0,0,0,67%);" [class]="title_color()"
+      [style]="tite_size_style?tite_size_style:''" class="text-center font-[800] tracking-wider">
+      REfresh your mind
+    </h2>
+    }
+
   </header>

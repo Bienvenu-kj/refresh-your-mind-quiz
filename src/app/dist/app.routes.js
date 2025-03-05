@@ -10,7 +10,22 @@ exports.routes = [
     {
         path: 'home',
         title: 'Home',
-        loadComponent: function () { return Promise.resolve().then(function () { return require('./ui/home/home.component'); }); }
+        loadComponent: function () { return Promise.resolve().then(function () { return require('./ui/home/home.component'); }); },
+        children: [
+            {
+                path: '',
+                loadComponent: function () {
+                    return Promise.resolve().then(function () { return require('./ui/home/home-content/home-content.component'); });
+                }
+            },
+            {
+                path: 'apropos',
+                title: 'apropos de',
+                loadComponent: function () {
+                    return Promise.resolve().then(function () { return require('./ui/home/apropos/apropos.component'); });
+                }
+            },
+        ]
     },
     {
         path: 'gaming',

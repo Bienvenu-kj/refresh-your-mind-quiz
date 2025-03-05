@@ -44,21 +44,30 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 exports.__esModule = true;
 var core_1 = require("@angular/core");
 var quiz_service_1 = require("../../Services/quiz.service");
+var router_1 = require("@angular/router");
+var animations_1 = require("@angular/animations");
+var music_sound_manager_service_1 = require("../../Services/music-sound-manager.service");
 var GamingPageComponent = /** @class */ (function () {
     function GamingPageComponent() {
         this.quizS = core_1.inject(quiz_service_1.QuizService);
+        this.MsM = core_1.inject(music_sound_manager_service_1.MusicSoundManagerService);
+        this.router = core_1.inject(router_1.Router);
         // signales pour differents états
+        this.onVeutQuitter = core_1.signal(false);
         this.score = core_1.signal(0);
         this.vies = core_1.signal(5);
+        this.apparaitre = core_1.signal(true);
+        this.chargement = core_1.signal(true);
         this.ChoiceAlreadyDone = core_1.signal(false);
         this.thereIsWrongChoice = core_1.signal(false);
         this.sontDesactives = core_1.signal(true);
+        this.material_icon = core_1.signal(true);
         // fin signales
         this.buttons = document.getElementsByClassName('choice_button');
     }
     GamingPageComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.quizS.getQuestions();
+        this.quizS.getQuestions(); // chargement de la toute première question
         // abonnements
         this.subscription_question = this.quizS.question_observ.subscribe({
             next: function (question) {
@@ -75,7 +84,17 @@ var GamingPageComponent = /** @class */ (function () {
                 _this.vies.set(vies);
             }
         });
+        this.subscription_material_icon = this.quizS.material_icon.subscribe({
+            next: function (icon_charge_ou_pas) {
+                _this.material_icon.set(icon_charge_ou_pas);
+                console.log(icon_charge_ou_pas);
+            }
+        });
         // fin abonnments
+    };
+    // pour animer l'apparition de nouvelle en douceur de nouvelles questions
+    GamingPageComponent.prototype.toggle = function () {
+        this.apparaitre.set(!this.apparaitre());
     };
     GamingPageComponent.prototype.ngOnDestroy = function () {
         this.subscription_question.unsubscribe();
@@ -83,23 +102,28 @@ var GamingPageComponent = /** @class */ (function () {
     // Button pour valider la reponse
     GamingPageComponent.prototype.validerReponse = function (event, Button, choix, question) {
         return __awaiter(this, void 0, void 0, function () {
-            var Button_via_event, rightAnswer;
+            var target, Button_via_event, rightAnswer;
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        Button_via_event = event.target;
+                        target = event.target;
+                        Button_via_event = target.classList.contains('btn_message')
+                            ? target.parentElement
+                            : target;
                         rightAnswer = question.answer;
                         // on anime le button cliqué en attende de validation
                         Button.classList.toggle('onChoose-answer');
+                        this.MsM.SetonChooseAnswerSound(); // son pour materialiser le choix d'une reponse
                         this.ChoiceAlreadyDone.set(true);
-                        // on attend pendant 2s avant de desactiver les boutons et poursuivres avec les autres operations /;
-                        return [4 /*yield*/, this.quizS.attendrePendant(2000)];
-                    case 1:
-                        // on attend pendant 2s avant de desactiver les boutons et poursuivres avec les autres operations /;
-                        _a.sent();
                         // desactivation des buttons /;
                         this.activOuDesactiveButtons(this.buttons);
+                        // on attend pendant 2s avant de poursuivres avec les autres operations /;
+                        return [4 /*yield*/, this.quizS.attendrePendant(2000)];
+                    case 1:
+                        // on attend pendant 2s avant de poursuivres avec les autres operations /;
+                        _a.sent();
                         if (!(choix === question.answer)) return [3 /*break*/, 3];
+                        this.MsM.SetonGoodAnswerSound(); //son pour materialiser la confirmation de la bonne reponse
                         Button_via_event.classList.toggle('good-answer');
                         // on attend apres 2.5s avant de mettre à jour le score /;
                         return [4 /*yield*/, this.quizS.attendrePendant(3500)];
@@ -109,6 +133,7 @@ var GamingPageComponent = /** @class */ (function () {
                         this.quizS.upDateScore(true);
                         return [3 /*break*/, 5];
                     case 3:
+                        this.MsM.SetonWrongAnswerSound(); //son pour materialiser la confirmation de la mauvaise reponse
                         Button_via_event.classList.toggle('wrong-answer');
                         this.thereIsWrongChoice.set(true);
                         // on attend après 2.5s avant de mettre à jour le score et les vies /;
@@ -127,16 +152,22 @@ var GamingPageComponent = /** @class */ (function () {
                         _a.sent();
                         //On envoie les questions repondues au service
                         this.quizS.putQuestionDone(question, choix, rightAnswer);
-                        // on active les boutons apres la validation de la reponse
-                        this.activOuDesactiveButtons(this.buttons);
                         // on change l'etat de tous les propriété et classes qui gerent l'etat de boutons
                         this.ChoiceAlreadyDone.set(false);
                         this.thereIsWrongChoice.set(false);
                         Button_via_event.classList.remove('wrong-answer');
                         Button_via_event.classList.remove('good-answer');
                         Button.classList.remove('onChoose-answer');
+                        this.toggle(); // on anime la disparition de la précedente question
                         // on charge la question suivante
+                        return [4 /*yield*/, this.quizS.attendrePendant(2950)];
+                    case 7:
+                        // on charge la question suivante
+                        _a.sent();
+                        this.toggle(); // on anime l'apparition de la nouvelle question
                         this.quizS.sendQuestion();
+                        // on active les boutons apres la validation de la reponse
+                        this.activOuDesactiveButtons(this.buttons);
                         return [2 /*return*/];
                 }
             });
@@ -160,6 +191,16 @@ var GamingPageComponent = /** @class */ (function () {
             }
         }
     };
+    /* fontion qui renvoie l'utilisateur à la page d'acueil */
+    GamingPageComponent.prototype.allerAl_accueil = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                this.router.navigate(['home']);
+                this.quizS.reset();
+                return [2 /*return*/];
+            });
+        });
+    };
     GamingPageComponent.prototype.questionSuivant = function (Button) {
         return __awaiter(this, void 0, void 0, function () {
             return __generator(this, function (_a) {
@@ -172,7 +213,19 @@ var GamingPageComponent = /** @class */ (function () {
             selector: 'app-gaming-page',
             imports: [],
             templateUrl: './gaming-page.component.html',
-            styleUrl: './gaming-page.component.css'
+            styleUrl: './gaming-page.component.css',
+            animations: [
+                animations_1.trigger('DispApparition', [
+                    animations_1.state('apparition', animations_1.style({
+                        opacity: 1
+                    })),
+                    animations_1.state('disparition', animations_1.style({
+                        opacity: 0
+                    })),
+                    animations_1.transition('apparition => disparition', animations_1.animate('3s ease-in-out', animations_1.style({ opacity: 0 }))),
+                    animations_1.transition('disparition => apparition', animations_1.animate('2.5s ease-in-out')),
+                ]),
+            ]
         })
     ], GamingPageComponent);
     return GamingPageComponent;

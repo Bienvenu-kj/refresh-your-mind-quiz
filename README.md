@@ -6,9 +6,12 @@
 
 - **Page de démarrage avec un chargement progressif**
 - **Page d'accueil**
+- **Page apropos**
 - **Interface de quiz avec score et vies**
 - **Page de résulats avec un resumé personnalisé**
 - **Détails des résultats avec des questins reussies et échouéees**
+- **Sons pour les boutons**
+- **Petites et simples animations css et angular**
 
 ## Installation et Utilisation
 
@@ -61,7 +64,7 @@ Toute contribution pour améliorer le projet est la bienvenue.
     1. Fork le projet
     2. Crée une nouvelle branche (`git checkout -b feature/nom-de-la-fonctionnalité`)
     3. Committes tes changements (`git commit -m 'Ajout d'une fonction'`)
-    4. Pusn la branch (`git push origin feature/nom-de-la-fonctionnalité`)
+    4. Push la branch (`git push origin feature/nom-de-la-fonctionnalité`)
     5. Ouvre une Pull Request
 
 ## Licence
@@ -76,4 +79,6 @@ Ce projet est sous licence MIT - voir le fichier [LICENCE](LICENCE) pour plus de
 
 ## Ressources utilisées :
 
-- **Icônes** : [Heroicons](https://heroicons.com) - Utiliisé pour les icônes jusqu'a maintenant
+- **Icônes** : [[Heroicons](https://heroicons.com) | [Google Material Icons](https://fonts.google.com/icons) | [Icons8](https://icons8.fr/)]
+
+- **Sons** : [[Pixabay](https://pixabay.com/sound-effects/) | [Freesound](https://freesound.org)]

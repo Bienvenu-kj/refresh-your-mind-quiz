@@ -53,6 +53,7 @@ var QuizService = /** @class */ (function () {
         this.questions_done = [];
         this.questions_done_obs = new rxjs_1.Observable();
         this.id = core_1.signal(0); /* le conteur permettant de charger la question suivante */
+        this.material_icon = new rxjs_1.BehaviorSubject(false);
         this.score_ = core_1.signal(0);
         this.score = new rxjs_1.BehaviorSubject(this.score_());
         this.vies_ = core_1.signal(5);
@@ -133,6 +134,20 @@ var QuizService = /** @class */ (function () {
     QuizService.prototype.attendrePendant = function (temps) {
         return new Promise(function (resolve) {
             setTimeout(resolve, temps);
+        });
+    };
+    QuizService.prototype.ngOnInit = function () {
+        var _this = this;
+        fetch('https://fonts.googleapis.com/icon?family=Material+Icons')
+            .then(function (response) {
+            if (response.ok) {
+                _this.material_icon.next(true);
+                console.log('Tout va bien, les icons sont prets', response);
+            }
+            throw new Error("Erreur lors de la requette " + response.status);
+        })["catch"](function (error) {
+            console.log(error);
+            _this.material_icon.next(false);
         });
     };
     QuizService = __decorate([

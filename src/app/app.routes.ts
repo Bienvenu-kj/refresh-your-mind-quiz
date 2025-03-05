@@ -11,7 +11,19 @@ export const routes: Routes = [
     path: 'home',
     title: 'Home',
     loadComponent: () => import('./ui/home/home.component'),
-    // canActivate: [() => true],
+    children: [
+      {
+        path: '',
+        loadComponent: () =>
+          import('./ui/home/home-content/home-content.component'),
+      },
+      {
+        path: 'apropos',
+        title:'apropos de',
+        loadComponent: () =>
+          import('./ui/home/apropos/apropos.component'),
+      },
+    ],
   },
   {
     path: 'gaming',

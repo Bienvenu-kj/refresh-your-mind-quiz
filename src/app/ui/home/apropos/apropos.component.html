@@ -1,0 +1,93 @@
+<style>
+  .index {
+    z-index: -1;
+  }
+</style>
+<div class="relative w-full h-full">
+  <div class="index blur-[8px] w-full h-full absolute top-0 left-0 princip_background">
+    <div class="princip_background w-full h-full">
+
+    </div>
+  </div>
+  <div class="container text-white z-index-10 max-w-screen-sm py-5 max-[640px]:px-5 px-6 m-auto h-full">
+    <div
+      class="h-full w-full border-[5px] bg-[rgba(0,0,0,70%)] border-yellow-200 rounded-[2.5rem] py-5 flex flex-col gap-y-13 max-[379px]:gap-y-9">
+      <header class="relative flex justify-center items-center">
+        <div role="button" aria-label="button retour au resultat" routerLink="/home" class="navigation_button rounded-[50px] py-1 absolute transition left-[4%]  hover:bg-[rgba(0,0,0,50%)] flex items-center
+          justify-center ">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" aria-hidden="true" data-slot="icon" class="navigation_button h-7 w-9 text-yellow-200">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
+          </svg>
+        </div>
+        <h1 class="text-center text-2xl text-yellow-200 font-[800] tracking-wider">
+          Apropos
+        </h1>
+      </header>
+      <main class="flex flex-col gap-y-8 max-[379px]:gap-y-5 items-center">
+        <header class="text-center">
+          <app-header class="" [isH1]='false' [title_size]='1.3' [title_color]="color_class" />
+          <span aria-label="version de l'application" id="version de l'application"
+            class="text-center text-gray-400 font-bold">
+            1.0.0
+          </span>
+        </header>
+        <main aria-label="informations secondaires de l'application"
+          class="relative w-full flex flex-col items-center mt-1 px-5">
+          <section id="info des créateurs" class="flex flex-col gap-y-3 w-full">
+            <a href="https://x.com/BienvenuLuc2005?t=r2cUIvqkrMdy-fnTT7KiLQ&s=09" target="_blank"
+              rel="noopener noreferrer" class="">
+              <h3
+                class="text-[1.15rem] tracking-wide flex items-center justify-between text-gray-400 transition hover:text-yellow-100">
+                Nous suivre sur X (Twitter)
+                <span class="material-icons">chevron_right
+                </span>
+              </h3>
+
+            </a>
+            <a href="https://linkedin.com/in/bienvenu-kajirifo-luc-9294b9326" target="_blank" rel="noopener noreferrer"
+              class="">
+              <h3 class="text-[1.15rem] tracking-wide flex items-center justify-between text-gray-400 transition
+                hover:text-yellow-100">
+                Nous suivre sur LinkedIn
+                <span class="material-icons">
+                  chevron_right
+
+                </span>
+              </h3>
+            </a>
+          </section>
+          <div id="separateur" class="w-full bg-[#757575] h-[0.5px] my-4"></div>
+          <section aria-label="ressources utilisées" class="w-full">
+            <h3 class="text-gray-400 text-[1.15rem]">
+              Ressources utilisées
+            </h3>
+            <ol class="mt-1">
+              <li class="text-gray-400">Police de caractères : [ <span> <a href="htts://fonts.google.com/"
+                    rel="noopener noreperer" class="transition hover:text-yellow-100">Google Fonts</a> </span>
+                ]
+              </li>
+              <li class="text-gray-400">Icons : [<span><a href="htts://fonts.google.com/icons" rel="noopener noreperer"
+                    class="hover:text-yellow-100 transition"> Google Material Icons |
+                  </a></span>
+                <span><a href="https://heroicons.com/" target="_blank" rel="noopener noreperer"
+                    class="hover:text-yellow-100 transition">Hero icons | </a></span>
+                <span><a href="https://icons8.fr/" rel="noopener noreperer" target="_blank"
+                    class="hover:text-yellow-100 transition">Icons8</a></span> ]
+              </li>
+              <li class="text-gray-400">Sons : [<span><a href="https://pixabay.com/sound-effects/"
+                    rel="noopener noreperer" class="hover:text-yellow-100 transition"> Pixabay |
+                  </a></span>
+                <span><a href="https://freesound.org" target="_blank" rel="noopener noreperer"
+                    class="hover:text-yellow-100 transition">Freesound ]</a></span>
+
+              </li>
+
+            </ol>
+          </section>
+        </main>
+      </main>
+
+    </div>
+  </div>
+</div>

@@ -8,37 +8,66 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 exports.__esModule = true;
 exports.MusicSoundManagerService = void 0;
 var core_1 = require("@angular/core");
-var rxjs_1 = require("rxjs");
 var MusicSoundManagerService = /** @class */ (function () {
     function MusicSoundManagerService() {
         //ici on veut gerer le son de clique de boutons
-        this.clickSound = new Audio();
+        this.normalButton = new Audio();
+        this.navigationButton = new Audio();
+        this.onChooseAnswer = new Audio();
+        this.onGoodAnswer = new Audio();
+        this.onWrongAnswer = new Audio();
+        this.onWinGame = new Audio();
+        this.OnGameOver = new Audio();
         this.sounds = {
             src: {
-                normal: 'audios/sounds/normal/button-4-214382.mp3',
+                normal: 'audios/sounds/normal/mouse-click-290204.mp3',
                 menu: '',
+                navigation: 'audios/sounds/navigation_sound/ui-navigation-sound-270299.mp3',
                 volum_up: '',
                 volum_down: '',
-                succed: '',
-                fail: '',
-                win: '',
-                gameOver: ''
+                onChooseAnswer: 'audios/sounds/onChoose/greanpatch-166007.mp3',
+                onFailAnswer: 'audios/sounds/onFail/fail-234710.mp3',
+                onSuccessAnswer: 'audios/sounds/onSuccess/success-2219351.mp3',
+                win: 'audios/sounds/win/success-fanfare-trumpets-6185.mp3',
+                gameOver: 'audios/sounds/gameOver/game-win-360821.mp3'
             }
         };
-        // ces 9 lignes qui suivents concernent uniquement la mise en place et la gestion de la musique pour le jeux
-        this.music_game_state = core_1.signal(false);
-        this.music_game_state_subject = new rxjs_1.BehaviorSubject(false);
-        this.music_game_state_observ = this.music_game_state_subject.asObservable();
-        this.clickSound.src = this.sounds.src.normal;
-        this.clickSound.load();
+        this.onWinGame.src = this.sounds.src.win;
+        this.OnGameOver.src = this.sounds.src.gameOver;
+        this.onGoodAnswer.src = this.sounds.src.onSuccessAnswer;
+        this.onWrongAnswer.src = this.sounds.src.onFailAnswer;
+        this.navigationButton.src = this.sounds.src.navigation;
+        this.onChooseAnswer.src = this.sounds.src.onChooseAnswer;
+        this.normalButton.src = this.sounds.src.normal;
+        this.navigationButton.load();
+        this.normalButton.load();
+        this.onChooseAnswer.load();
+        this.onGoodAnswer.load();
+        this.onWrongAnswer.load();
+        this.onWinGame.load();
+        this.OnGameOver.load();
     }
-    MusicSoundManagerService.prototype.SetButtonSound = function () {
-        this.clickSound.currentTime = 0;
-        this.clickSound.play();
+    MusicSoundManagerService.prototype.SetNormalButtonSound = function () {
+        this.normalButton.currentTime = 0;
+        this.normalButton.play();
     };
-    MusicSoundManagerService.prototype.SetMusicGameOnOff = function () {
-        this.music_game_state.set(!this.music_game_state());
-        this.music_game_state_subject.next(this.music_game_state());
+    MusicSoundManagerService.prototype.SetNavigationButtonSound = function () {
+        this.navigationButton.play();
+    };
+    MusicSoundManagerService.prototype.SetonChooseAnswerSound = function () {
+        this.onChooseAnswer.play();
+    };
+    MusicSoundManagerService.prototype.SetonGoodAnswerSound = function () {
+        this.onGoodAnswer.play();
+    };
+    MusicSoundManagerService.prototype.SetonWrongAnswerSound = function () {
+        this.onWrongAnswer.play();
+    };
+    MusicSoundManagerService.prototype.SetOnWinGameSound = function () {
+        this.onWinGame.play();
+    };
+    MusicSoundManagerService.prototype.SetOnGameOverSound = function () {
+        this.OnGameOver.play();
     };
     MusicSoundManagerService = __decorate([
         core_1.Injectable({

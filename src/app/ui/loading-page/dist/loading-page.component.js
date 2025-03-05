@@ -48,8 +48,8 @@ var router_1 = require("@angular/router");
 var LoadingPageComponent = /** @class */ (function () {
     function LoadingPageComponent() {
         this.router = core_1.inject(router_1.Router);
-        this.w_progress = '';
-        this.progress_counter = '';
+        this.w_progress = core_1.signal('');
+        this.progress_counter = core_1.signal('');
         this.i = 0;
         this.fin = 100;
         this.isLoading = true;
@@ -64,26 +64,23 @@ var LoadingPageComponent = /** @class */ (function () {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (!(this.i <= this.fin)) return [3 /*break*/, 4];
-                        this.w_progress = "width:" + this.i + "%";
-                        this.progress_counter = "" + this.i;
-                        if (!(this.i == 50 || this.i == 62)) return [3 /*break*/, 2];
-                        return [4 /*yield*/, this.attendre(1000)];
+                        if (!(this.i <= this.fin)) return [3 /*break*/, 2];
+                        this.w_progress.set("width:" + this.i + "%");
+                        this.progress_counter.set("" + this.i);
+                        if (this.i == 99) {
+                            this.w_progress.set("width:" + (this.i + 1) + "%");
+                            this.progress_counter.set("" + (this.i + 1));
+                        }
+                        this.i += 3;
+                        return [4 /*yield*/, this.attendre(177)];
                     case 1:
                         _a.sent();
-                        _a.label = 2;
-                    case 2:
-                        this.i++;
-                        return [4 /*yield*/, this.attendre(177)];
-                    case 3:
-                        _a.sent();
                         this.progresser();
-                        _a.label = 4;
-                    case 4:
-                        if (this.i == 101) {
-                            this.router.navigate(['home']);
-                        }
-                        return [2 /*return*/];
+                        return [3 /*break*/, 3];
+                    case 2:
+                        this.router.navigate(['home']);
+                        _a.label = 3;
+                    case 3: return [2 /*return*/];
                 }
             });
         });

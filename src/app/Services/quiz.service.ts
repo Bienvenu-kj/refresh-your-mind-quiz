@@ -1,4 +1,4 @@
-import { Injectable, signal } from '@angular/core';
+import { Injectable, OnInit, signal } from '@angular/core';
 import { DetailsResult, Question } from '../core/models/model';
 import { BehaviorSubject, from, Observable, of, Subject } from 'rxjs';
 import { Router } from '@angular/router';
@@ -6,14 +6,14 @@ import { Router } from '@angular/router';
 @Injectable({
   providedIn: 'root',
 })
-export class QuizService {
+export class QuizService implements OnInit {
   constructor(private router: Router) {}
 
   expetedScore = signal(100);
   questions_done: DetailsResult[] = [];
   questions_done_obs = new Observable<DetailsResult[]>();
   id = signal(0); /* le conteur permettant de charger la question suivante */
-
+  material_icon = new BehaviorSubject<boolean>(false);
   score_ = signal(0);
   score = new BehaviorSubject<number>(this.score_());
 
@@ -95,5 +95,20 @@ export class QuizService {
     return new Promise((resolve) => {
       setTimeout(resolve, temps);
     });
+  }
+
+  ngOnInit(): void {
+    fetch('https://fonts.googleapis.com/icon?family=Material+Icons')
+      .then((response) => {
+        if (response.ok) {
+          this.material_icon.next(true);
+          console.log('Tout va bien, les icons sont prets', response);
+        }
+        throw new Error(`Erreur lors de la requette ${response.status}`);
+      })
+      .catch((error) => {
+        console.log(error);
+        this.material_icon.next(false);
+      });
   }
 }
