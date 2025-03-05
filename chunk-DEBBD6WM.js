@@ -1,0 +1,1 @@
+import{$ as l,H as o,v as i}from"./chunk-7JDHDX52.js";var t=class n{static \u0275fac=function(e){return new(e||n)};static \u0275cmp=i({type:n,selectors:[["app-quiz-final-result"]],decls:1,vars:0,template:function(e,a){e&1&&o(0,"router-outlet")},dependencies:[l],encapsulation:2})};export{t as default};
