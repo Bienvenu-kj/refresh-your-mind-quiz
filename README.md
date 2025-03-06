@@ -6,23 +6,23 @@
 
 **• Expérience fluide et interactive**
 
-  **- Page de démarrage avec un chargement progressif**
+  - Page de démarrage avec un chargement progressif
 
-  **- Interface dynamique avec animations CSS et Angular**
+  - Interface dynamique avec animations CSS et Angular
  
 
 **• Navigation intuitive**
 
-  **- Page d’accueil attrayante**
+  - Page d’accueil attrayante
 
-  **- Section À propos pour en savoir plus sur l’application**
+  - Section À propos pour en savoir plus sur l’application
 
 
 **Quiz interactif**
 
-  **- Interface de quiz avec gestion du score et des vies**
+  - Interface de quiz avec gestion du score et des vies
 
-  **- Effets sonores pour les boutons et interactions**
+  - Effets sonores pour les boutons et interactions
 
 
 **Analyse des résultats**
