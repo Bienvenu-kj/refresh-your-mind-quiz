@@ -4,14 +4,32 @@
 
 ## Fonctionnalités :
 
-- **Page de démarrage avec un chargement progressif**
-- **Page d'accueil**
-- **Page apropos**
-- **Interface de quiz avec score et vies**
-- **Page de résulats avec un resumé personnalisé**
-- **Détails des résultats avec des questins reussies et échouéees**
-- **Sons pour les boutons**
-- **Petites et simples animations css et angular**
+**• Expérience fluide et interactive**
+
+  **- Page de démarrage avec un chargement progressif**
+
+  **- Interface dynamique avec animations CSS et Angular**
+ 
+
+**• Navigation intuitive**
+
+  **- Page d’accueil attrayante**
+
+  **- Section À propos pour en savoir plus sur l’application**
+
+
+**Quiz interactif**
+
+  **- Interface de quiz avec gestion du score et des vies**
+
+  **- Effets sonores pour les boutons et interactions**
+
+
+**Analyse des résultats**
+
+  **- Page de résultats avec un résumé personnalisé**
+
+  **- Détails des réponses : questions réussies et échouées**
 
 ## Installation et Utilisation
 
