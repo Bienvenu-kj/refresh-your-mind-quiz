@@ -27,9 +27,9 @@
 
 **Analyse des résultats**
 
-  **- Page de résultats avec un résumé personnalisé**
+  - Page de résultats avec un résumé personnalisé
 
-  **- Détails des réponses : questions réussies et échouées**
+  - Détails des réponses : questions réussies et échouées
 
 ## Installation et Utilisation
 
