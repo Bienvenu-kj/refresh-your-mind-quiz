@@ -69,7 +69,7 @@ Toute contribution pour améliorer le projet est la bienvenue.
 
 ## Licence
 
-Ce projet est sous licence MIT - voir le fichier [LICENCE](LICENCE) pour plus de détails.
+Ce projet est sous licence MIT - voir le fichier [LICENCE](LICENSE) pour plus de détails.
 
 ## Technologies et Bibliothèques utilisées :
 
