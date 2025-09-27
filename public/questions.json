@@ -59,10 +59,4 @@
     "choices": ["Texte rouge dans la page", "Avertissement dans la console", "Arrêt du navigateur", "Boîte d’alerte"],
     "answer": "Avertissement dans la console"
   },
-  {
-    "id": 11,
-    "question": "Si tu veux exécuter rapidement du JavaScript sans fichier HTML, que peux-tu utiliser ?",
-    "choices": ["Terminal Windows", "Console du navigateur", "Fichier CSS", "Bloc-notes sans extension"],
-    "answer": "Console du navigateur"
-  }
     ]
