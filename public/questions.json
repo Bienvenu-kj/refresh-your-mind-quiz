@@ -1,77 +1,68 @@
 [
   {
     "id": 1,
-    "question": "Quel langage est utilisé pour structurer une page web ?",
-    "choices": ["HTML", "CSS", "JavaScript", "PHP"],
-    "answer": "HTML"
+    "question": "Quel est le rôle principal de JavaScript dans une page web ?",
+    "choices": ["Définir la structure", "Appliquer du style", "Rendre la page interactive", "Héberger la page"],
+    "answer": "Rendre la page interactive"
   },
   {
     "id": 2,
-    "question": "Quel langage permet de styliser une page web ?",
-    "choices": ["HTML", "CSS", "JavaScript", "Python"],
-    "answer": "CSS"
+    "question": "Laquelle n’est pas une façon correcte d’ajouter du JavaScript à une page HTML ?",
+    "choices": ["Dans une balise <script>", "Avec <script src='script.js'>", "Dans une balise <style>", "Via la console du navigateur"],
+    "answer": "Dans une balise <style>"
   },
   {
     "id": 3,
-    "question": "Quel élément HTML est utilisé pour créer un lien hypertexte ?",
-    "choices": ["<a>", "<link>", "<href>", "<button>"],
-    "answer": "<a>"
+    "question": "Que fait console.log('Hello World'); en JavaScript ?",
+    "choices": ["Affiche dans la page HTML", "Affiche dans la console", "Crée une boîte de dialogue", "Déclare une variable"],
+    "answer": "Affiche dans la console"
   },
   {
     "id": 4,
-    "question": "Quelle méthode JavaScript permet d'ajouter un élément au DOM ?",
-    "choices": [
-      "appendChild()",
-      "addElement()",
-      "createNode()",
-      "insertItem()"
-    ],
-    "answer": "appendChild()"
+    "question": "Quelle est la différence entre console.error() et console.warn() ?",
+    "choices": ["Erreur vs avertissement", "Ils font la même chose", "warn() arrête le programme", "error() affiche dans la page"],
+    "answer": "Erreur vs avertissement"
   },
   {
     "id": 5,
-    "question": "Quelle propriété CSS permet de changer la couleur du texte ?",
-    "choices": ["color", "text-color", "font-color", "background-color"],
-    "answer": "color"
+    "question": "Quelle extension doit avoir un fichier JavaScript externe ?",
+    "choices": [".html", ".css", ".js", ".json"],
+    "answer": ".js"
   },
   {
     "id": 6,
-    "question": "Quelle est la signification de CSS ?",
-    "choices": [
-      "Computer Style Sheets",
-      "Creative Style System",
-      "Cascading Style Sheets",
-      "Code Styling Source"
-    ],
-    "answer": "Cascading Style Sheets"
+    "question": "Où place-t-on généralement la balise <script src='script.js'></script> ?",
+    "choices": ["Dans le <head>", "À la fin du <body>", "En dehors de <html>", "N’importe où sans importance"],
+    "answer": "À la fin du <body>"
   },
   {
     "id": 7,
-    "question": "Comment sélectionner un élément par son ID en CSS ?",
-    "choices": ["#", ".", "*", "@id"],
-    "answer": "#"
+    "question": "Quel langage est responsable de la structure d’une page web ?",
+    "choices": ["CSS", "JavaScript", "HTML", "PHP"],
+    "answer": "HTML"
   },
   {
     "id": 8,
-    "question": "Quel est le rôle de JavaScript sur une page web ?",
-    "choices": [
-      "Gérer la mise en page",
-      "Ajouter de l'interactivité",
-      "Créer des bases de données",
-      "Faire du design"
-    ],
-    "answer": "Ajouter de l'interactivité"
+    "question": "Quel langage est responsable du style d’une page web ?",
+    "choices": ["HTML", "JavaScript", "CSS", "SQL"],
+    "answer": "CSS"
   },
   {
     "id": 9,
-    "question": "Quelle extension de fichier est utilisée pour une feuille de style CSS ?",
-    "choices": [".html", ".css", ".js", ".php"],
-    "answer": ".css"
+    "question": "Que se passe-t-il si on écrit du JavaScript en dehors d’une balise <script> dans un fichier HTML ?",
+    "choices": ["Le code est exécuté", "Le code est ignoré", "Le code s’affiche comme texte", "La page ne s’ouvre pas"],
+    "answer": "Le code s’affiche comme texte"
   },
   {
     "id": 10,
-    "question": "Quelle propriété CSS permet de rendre un élément flexible ?",
-    "choices": ["grid", "block", "flex", "relative"],
-    "answer": "flex"
+    "question": "Que produit console.warn('Attention'); ?",
+    "choices": ["Texte rouge dans la page", "Avertissement dans la console", "Arrêt du navigateur", "Boîte d’alerte"],
+    "answer": "Avertissement dans la console"
+  },
+  {
+    "id": 11,
+    "question": "Si tu veux exécuter rapidement du JavaScript sans fichier HTML, que peux-tu utiliser ?",
+    "choices": ["Terminal Windows", "Console du navigateur", "Fichier CSS", "Bloc-notes sans extension"],
+    "answer": "Console du navigateur"
   }
-]
+    ]
