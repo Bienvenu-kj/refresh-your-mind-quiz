@@ -58,5 +58,5 @@
     "question": "Que produit console.warn('Attention'); ?",
     "choices": ["Texte rouge dans la page", "Avertissement dans la console", "Arrêt du navigateur", "Boîte d’alerte"],
     "answer": "Avertissement dans la console"
-  },
+  }
     ]
