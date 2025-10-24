@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "question": `Quel type de données représente "vrai" ou "faux" ?`,
+    "question": 'Quel type de données représente "vrai" ou "faux" ?',
     "choices": ["String","Number","Boolean","Array"],
     "answer": "Boolean"
   },
