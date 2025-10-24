@@ -1,62 +1,62 @@
 [
   {
     "id": 1,
-    "question": "Quel est le rôle principal de JavaScript dans une page web ?",
-    "choices": ["Définir la structure", "Appliquer du style", "Rendre la page interactive", "Héberger la page"],
-    "answer": "Rendre la page interactive"
+    "question": Quel type de données représente "vrai" ou "faux" ?",
+    "choices": ["String","Number","Boolean","Array"],
+    "answer": "Boolean"
   },
   {
     "id": 2,
-    "question": "Laquelle n’est pas une façon correcte d’ajouter du JavaScript à une page HTML ?",
-    "choices": ["Dans une balise <script>", "Avec <script src='script.js'>", "Dans une balise <style>", "Via la console du navigateur"],
-    "answer": "Dans une balise <style>"
+    "question": "Que fait la fonction alert() ?",
+    "choices": ["Affiche une boîte de dialogue pour saisir du texte","Affiche une boîte de dialogue avec un message","Arrête l'exécution du script","Enregistre un message dans la console"],
+    "answer": "Affiche une boîte de dialogue avec un message"
   },
   {
     "id": 3,
-    "question": "Que fait console.log('Hello World'); en JavaScript ?",
-    "choices": ["Affiche dans la page HTML", "Affiche dans la console", "Crée une boîte de dialogue", "Déclare une variable"],
-    "answer": "Affiche dans la console"
+    "question": "Quelle fonction permet de demander une saisie à l'utilisateur ?",
+    "choices": ["alert()","confirm()","prompt()","input()"],
+    "answer":  "prompt()"
   },
   {
     "id": 4,
-    "question": "Quelle est la différence entre console.error() et console.warn() ?",
-    "choices": ["Erreur vs avertissement", "Ils font la même chose", "warn() arrête le programme", "error() affiche dans la page"],
-    "answer": "Erreur vs avertissement"
+    "question": "Que retourne prompt("Quel est votre nom ?") ?",
+    "choices": ["Un nombre","Un booléen","Une chaîne de caractères","Un objet"],
+    "answer": "Une chaîne de caractères"
   },
   {
     "id": 5,
-    "question": "Quelle extension doit avoir un fichier JavaScript externe ?",
-    "choices": [".html", ".css", ".js", ".json"],
-    "answer": ".js"
+    "question": "Comment commente-t-on une ligne en JavaScript ?",
+    "choices": ["// Ceci est un commentaire","/* Ceci est un commentaire */","# Ceci est un commentaire","-- Ceci est un commentaire"],
+    "answer": "// Ceci est un commentaire"
   },
   {
     "id": 6,
-    "question": "Où place-t-on généralement la balise <script src='script.js'></script> ?",
-    "choices": ["Dans le <head>", "À la fin du <body>", "En dehors de <html>", "N’importe où sans importance"],
-    "answer": "À la fin du <body>"
+    "question": "Quel opérateur utilise-t-on pour l'affectation ?",
+    "choices": ["==","=","===",":="],
+    "answer": "="
   },
   {
     "id": 7,
-    "question": "Quel langage est responsable de la structure d’une page web ?",
-    "choices": ["CSS", "JavaScript", "HTML", "PHP"],
-    "answer": "HTML"
+    "question": "Comment concaténer deux chaînes de caractères ?",
+    "choices": ["Avec l'opérateur +","Avec l'opérateur &","Avec la fonction concat()","Avec l'opérateur ."],
+    "answer": "Avec l'opérateur +"
   },
   {
     "id": 8,
-    "question": "Quel langage est responsable du style d’une page web ?",
-    "choices": ["HTML", "JavaScript", "CSS", "SQL"],
-    "answer": "CSS"
+    "question": "Que fait console.log() ?",
+    "choices": ["Affiche une alerte","Affiche un message dans la console du navigateur","Demande une saisie utilisateur","Arrête le script"],
+    "answer": "Affiche un message dans la console du navigateur"
   },
   {
     "id": 9,
-    "question": "Que se passe-t-il si on écrit du JavaScript en dehors d’une balise <script> dans un fichier HTML ?",
-    "choices": ["Le code est exécuté", "Le code est ignoré", "Le code s’affiche comme texte", "La page ne s’ouvre pas"],
-    "answer": "Le code s’affiche comme texte"
+    "question": "Quel est le résultat de "5" + 2 ?",
+    "choices": ["7",'"52"','"7"',"Erreur"],
+    "answer": '"52"'
   },
   {
     "id": 10,
-    "question": "Que produit console.warn('Attention'); ?",
-    "choices": ["Texte rouge dans la page", "Avertissement dans la console", "Arrêt du navigateur", "Boîte d’alerte"],
-    "answer": "Avertissement dans la console"
+    "question": "Quel mot-clé utilise-t-on pour déclarer une constante ?",
+    "choices": ["constant","const","let","var"],
+    "answer": "const"
   }
     ]
